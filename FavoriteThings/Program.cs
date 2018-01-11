@@ -10,6 +10,39 @@ namespace FavoriteThings
     {
         static void Main(string[] args)
         {
+            var book = new Book
+            {
+                BookName = "Odd Thomas"
+            };
+        }
+    }
+
+    class Book
+    {
+        protected string _bookName;
+        protected string _author;
+        public string BookName
+        {
+            get
+            {
+                return $"I love the book {_bookName}!";
+            }
+            set
+            {
+                _bookName = value;
+            }
+        }
+
+        public string Author
+        {
+            get
+            {
+                return $"The author is {_author}.";
+            }
+            set
+            {
+                _author = value;
+            }
         }
     }
 }
