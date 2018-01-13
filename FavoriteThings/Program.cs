@@ -21,6 +21,7 @@ namespace FavoriteThings
     {
         protected string _bookName;
         protected string _author;
+
         public string BookName
         {
             get
@@ -42,6 +43,36 @@ namespace FavoriteThings
             set
             {
                 _author = value;
+            }
+        }
+    }
+
+    class Movie
+    {
+        protected string _movieName;
+        protected string _movieYear;
+
+        public string MovieName
+        {
+            get
+            {
+                return $"My favorite movie is {_movieName}!";
+            }
+            set
+            {
+                _movieName = value;
+            }
+        }
+
+        public string MovieYear
+        {
+            get
+            {
+                return $"This movie was released in {_movieYear}.";
+            }
+            set
+            {
+                _movieYear = value;
             }
         }
     }
