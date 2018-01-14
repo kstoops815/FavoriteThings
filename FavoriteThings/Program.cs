@@ -14,6 +14,11 @@ namespace FavoriteThings
             {
                 BookName = "Odd Thomas"
             };
+
+            var movie = new Movie
+            {
+                MovieName = "Independence Day"
+            };
         }
     }
 
