@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FavoriteThings
 {
@@ -10,75 +7,31 @@ namespace FavoriteThings
     {
         static void Main(string[] args)
         {
-            var book = new Book
+            var favBook = new Book { BookName = "Odd Thomas", Author = "Dean Koontz" };
+            //var bookAuthor = new Book { Author = "Dean Koontz" };
+            Console.WriteLine($"{favBook.BookName} is one of my favorite books!\n{favBook.Author} is the author.");
+
+            var favMovie = new Movie { MovieName = "Pitch Perfect" };
+            Console.WriteLine($"{favMovie.MovieName} is my favorite movie!");
+
+            var favDrink = new Drink { DrinkName = "Diet Coke" };
+            Console.WriteLine($"My favorite drink is {favDrink.DrinkName}.");
+
+            var hobbies = new List<Hobby>
             {
-                BookName = "Odd Thomas"
+                new Hobby { ThingToDo = "sewing", Crafty = true },
+                new Hobby { ThingToDo = "bowling", Crafty = false },
+                new Hobby { ThingToDo = "scrapbooking", Crafty = true },
+                new Hobby { ThingToDo = "fantasy football", Crafty = false },
             };
 
-            var movie = new Movie
+            foreach (var hobby in hobbies)
             {
-                MovieName = "Independence Day"
-            };
-        }
-    }
-
-    class Book
-    {
-        protected string _bookName;
-        protected string _author;
-
-        public string BookName
-        {
-            get
-            {
-                return $"I love the book {_bookName}!";
-            }
-            set
-            {
-                _bookName = value;
-            }
-        }
-
-        public string Author
-        {
-            get
-            {
-                return $"The author is {_author}.";
-            }
-            set
-            {
-                _author = value;
-            }
-        }
-    }
-
-    class Movie
-    {
-        protected string _movieName;
-        protected string _movieYear;
-
-        public string MovieName
-        {
-            get
-            {
-                return $"My favorite movie is {_movieName}!";
-            }
-            set
-            {
-                _movieName = value;
-            }
-        }
-
-        public string MovieYear
-        {
-            get
-            {
-                return $"This movie was released in {_movieYear}.";
-            }
-            set
-            {
-                _movieYear = value;
+                Console.WriteLine($"{hobby.ThingToDo} is {(hobby.Crafty ? "crafty." : "not crafty.")}");
+                Console.WriteLine(hobby.TheHobbyIsCrafty());
             }
         }
     }
 }
+
+ 
